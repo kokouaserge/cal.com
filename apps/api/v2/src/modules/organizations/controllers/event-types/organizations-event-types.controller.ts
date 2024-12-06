@@ -54,7 +54,7 @@ export type EventTypeHandlerResponse = {
 };
 
 @Controller({
-  path: "/v2/organizations/:orgId",
+  path: "/organizations/:orgId",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Orgs / Event Types")
