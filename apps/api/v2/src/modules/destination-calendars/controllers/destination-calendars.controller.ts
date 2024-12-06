@@ -15,7 +15,7 @@ import { plainToClass } from "class-transformer";
 import { SUCCESS_STATUS } from "@calcom/platform-constants";
 
 @Controller({
-  path: "/v2/destination-calendars",
+  path: "/destination-calendars",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Destination Calendars")
