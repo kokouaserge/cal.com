@@ -12,7 +12,7 @@ import { RemoveSelectedSlotInput, ReserveSlotInput } from "@calcom/platform-type
 import { ApiResponse, GetAvailableSlotsInput } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/slots",
+  path: "/slots",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Slots")
