@@ -26,7 +26,7 @@ import { SkipTakePagination } from "@calcom/platform-types";
 import { OAuthClientGuard } from "../../guards/oauth-client-guard";
 
 @Controller({
-  path: "/v2/oauth-clients/:clientId/webhooks",
+  path: "/oauth-clients/:clientId/webhooks",
   version: API_VERSIONS_VALUES,
 })
 @UseGuards(NextAuthGuard, OrganizationRolesGuard, OAuthClientGuard)
