@@ -38,7 +38,7 @@ import { SUCCESS_STATUS } from "@calcom/platform-constants";
 import { Team } from "@calcom/prisma/client";
 
 @Controller({
-  path: "/v2/organizations/:orgId/users",
+  path: "/organizations/:orgId/users",
   version: API_VERSIONS_VALUES,
 })
 @UseInterceptors(ClassSerializerInterceptor)
