@@ -37,7 +37,7 @@ import { Response as ExpressResponse } from "express";
 import { SUCCESS_STATUS, X_CAL_SECRET_KEY } from "@calcom/platform-constants";
 
 @Controller({
-  path: "/v2/oauth/:clientId",
+  path: "/oauth/:clientId",
   version: API_VERSIONS_VALUES,
 })
 export class OAuthFlowController {
