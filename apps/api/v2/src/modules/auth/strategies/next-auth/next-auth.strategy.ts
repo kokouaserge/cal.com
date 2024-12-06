@@ -16,6 +16,7 @@ export class NextAuthStrategy extends PassportStrategy(NextAuthPassportStrategy,
     try {
       const nextAuthSecret = this.config.get("next.authSecret", { infer: true });
       const payload = await getToken({ req, secret: nextAuthSecret});
+      console.log('token value', payload);
 
       if (!payload) {
         throw new UnauthorizedException("Authentication token is missing or invalid.");
