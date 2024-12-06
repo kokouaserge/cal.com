@@ -28,7 +28,7 @@ import { Request } from "express";
 import { ApiResponse } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/billing",
+  path: "/billing",
   version: API_VERSIONS_VALUES,
 })
 @ApiExcludeController(true)
