@@ -34,7 +34,7 @@ import { SUCCESS_STATUS } from "@calcom/platform-constants";
 import { SkipTakePagination } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/organizations/:orgId",
+  path: "/organizations/:orgId",
   version: API_VERSIONS_VALUES,
 })
 @UseGuards(ApiAuthGuard, IsOrgGuard, RolesGuard, PlatformPlanGuard, IsAdminAPIEnabledGuard)
