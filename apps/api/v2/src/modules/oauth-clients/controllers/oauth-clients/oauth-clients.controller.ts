@@ -48,7 +48,7 @@ const AUTH_DOCUMENTATION = `⚠️ First, this endpoint requires \`Cookie: next-
 Second, make sure that the logged in user has organizationId set to pass the OrganizationRolesGuard guard.`;
 
 @Controller({
-  path: "/v2/oauth-clients",
+  path: "/oauth-clients",
   version: API_VERSIONS_VALUES,
 })
 @UseGuards(NextAuthGuard, OrganizationRolesGuard)
