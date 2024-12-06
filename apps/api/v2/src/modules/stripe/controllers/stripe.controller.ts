@@ -31,7 +31,7 @@ import { stringify } from "querystring";
 import { SUCCESS_STATUS } from "@calcom/platform-constants";
 
 @Controller({
-  path: "/v2/stripe",
+  path: "/stripe",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Stripe")
