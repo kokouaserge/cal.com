@@ -30,7 +30,7 @@ these endpoints should not be recommended for use by third party and are exclude
 */
 
 @Controller({
-  path: "/v2/atoms",
+  path: "/atoms",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Atoms - endpoints for atoms")
