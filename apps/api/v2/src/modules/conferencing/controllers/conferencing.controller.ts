@@ -27,7 +27,7 @@ import { plainToInstance } from "class-transformer";
 import { CONFERENCING_APPS, GOOGLE_MEET, SUCCESS_STATUS } from "@calcom/platform-constants";
 
 @Controller({
-  path: "/v2/conferencing",
+  path: "/conferencing",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Conferencing")
