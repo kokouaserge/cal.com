@@ -20,7 +20,7 @@ import { plainToClass } from "class-transformer";
 import { SUCCESS_STATUS } from "@calcom/platform-constants";
 
 @Controller({
-  path: "/v2/selected-calendars",
+  path: "/selected-calendars",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Selected Calendars")
