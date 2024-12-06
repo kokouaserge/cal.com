@@ -23,7 +23,7 @@ import { SUCCESS_STATUS } from "@calcom/platform-constants";
 import { SkipTakePagination } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/webhooks",
+  path: "/webhooks",
   version: API_VERSIONS_VALUES,
 })
 @UseGuards(ApiAuthGuard)
