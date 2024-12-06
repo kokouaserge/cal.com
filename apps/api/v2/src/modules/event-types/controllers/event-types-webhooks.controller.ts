@@ -33,7 +33,7 @@ import { SUCCESS_STATUS } from "@calcom/platform-constants";
 import { SkipTakePagination } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/event-types/:eventTypeId/webhooks",
+  path: "/event-types/:eventTypeId/webhooks",
   version: API_VERSIONS_VALUES,
 })
 @UseGuards(ApiAuthGuard, IsUserEventTypeWebhookGuard)
