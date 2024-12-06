@@ -37,7 +37,7 @@ import { SUCCESS_STATUS } from "@calcom/platform-constants";
 import { Pagination } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/oauth-clients/:clientId/users",
+  path: "/oauth-clients/:clientId/users",
   version: API_VERSIONS_VALUES,
 })
 @UseGuards(ApiAuthGuard, OAuthClientGuard, OrganizationRolesGuard)
