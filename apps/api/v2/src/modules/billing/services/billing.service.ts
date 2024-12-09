@@ -36,6 +36,7 @@ export class BillingService implements OnModuleDestroy {
 
   async getBillingData(teamId: number) {
     const teamWithBilling = await this.teamsRepository.findByIdIncludeBilling(teamId);
+    console.log("teamWithBilling", teamWithBilling);
     if (teamWithBilling?.platformBilling) {
       if (!teamWithBilling?.platformBilling.subscriptionId) {
         return { team: teamWithBilling, status: "no_subscription", plan: "none" };

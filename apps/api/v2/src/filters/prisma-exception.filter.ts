@@ -35,6 +35,15 @@ export class PrismaExceptionFilter implements ExceptionFilter {
     const request = ctx.getRequest<Request>();
     const requestId = request.headers["X-Request-Id"];
 
+    console.log(`PrismaError: ${error.message}`, {
+      error,
+      body: request.body,
+      headers: request.headers,
+      url: request.url,
+      method: request.method,
+      requestId,
+    });
+
     this.logger.error(`PrismaError: ${error.message}`, {
       error,
       body: request.body,
