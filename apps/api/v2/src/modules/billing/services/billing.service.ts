@@ -59,6 +59,10 @@ export class BillingService implements OnModuleDestroy {
         id: teamId,
         stripeId: customerId,
       });
+      console.log("Team had no Stripe Customer ID, created one for them.", {
+        id: teamId,
+        stripeId: customerId,
+      });
     }
 
     return customerId;

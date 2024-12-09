@@ -7,6 +7,7 @@ import { SubscribeToPlanInput } from "@/modules/billing/controllers/inputs/subsc
 import { CheckPlatformBillingResponseDto } from "@/modules/billing/controllers/outputs/CheckPlatformBillingResponse.dto";
 import { SubscribeTeamToBillingResponseDto } from "@/modules/billing/controllers/outputs/SubscribeTeamToBillingResponse.dto";
 import { BillingService } from "@/modules/billing/services/billing.service";
+import { PlatformPlan } from "@/modules/billing/types";
 import { StripeService } from "@/modules/stripe/stripe.service";
 import {
   Body,
@@ -70,12 +71,12 @@ export class BillingController {
     @Body() input: SubscribeToPlanInput
   ): Promise<ApiResponse<SubscribeTeamToBillingResponseDto | undefined>> {
     const customerId = await this.billingService.createTeamBilling(teamId);
-    const url = await this.billingService.redirectToSubscribeCheckout(teamId, input.plan, customerId);
+    // const url = await this.billingService.redirectToSubscribeCheckout(teamId, PlatformPlan.SCALE, customerId);
 
     return {
       status: "success",
       data: {
-        url,
+        url: "https://calcom.holysoft.fr/settings/platform",
       },
     };
   }
