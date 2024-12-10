@@ -20,7 +20,6 @@ RUN yarn install
 RUN yarn workspace @calcom/api-v2 run generate-schemas
 RUN rm -rf apps/api/v2/node_modules
 RUN yarn install
-RUN npx web-push generate-vapid-keys
 
 RUN yarn workspace @calcom/api-v2 run build
 
