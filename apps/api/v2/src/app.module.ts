@@ -36,7 +36,7 @@ import { AppController } from "./app.controller";
     BullModule.forRoot({
       redis: `${process.env.REDIS_URL}${process.env.NODE_ENV === "production" ? "?tls=true" : ""}`,
     }),
-    /* ThrottlerModule.forRootAsync({
+    ThrottlerModule.forRootAsync({
       imports: [RedisModule],
       inject: [RedisService],
       useFactory: (redisService: RedisService) => ({
@@ -48,12 +48,12 @@ import { AppController } from "./app.controller";
           {
             name: "dummy",
             ttl: seconds(60),
-            limit: 120,
+            limit: 12000000,
           },
         ],
         storage: new ThrottlerStorageRedisService(redisService.redis),
       }),
-    }), */
+    }),
     PrismaModule,
     EndpointsModule,
     AuthModule,
