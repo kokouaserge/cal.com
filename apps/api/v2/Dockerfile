@@ -12,6 +12,8 @@ ENV NODE_OPTIONS="--max-old-space-size=8192"
 ENV DATABASE_DIRECT_URL=${DATABASE_DIRECT_URL}
 ENV DATABASE_URL=${DATABASE_URL}
 
+RUN apk add --no-cache openssl
+
 COPY . .
 
 RUN yarn install
