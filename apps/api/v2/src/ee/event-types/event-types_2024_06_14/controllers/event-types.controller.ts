@@ -37,7 +37,7 @@ import {
 } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/event-types",
+  path: "/event-types",
   version: VERSION_2024_06_14_VALUE,
 })
 @UseGuards(PermissionsGuard)

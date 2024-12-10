@@ -32,7 +32,7 @@ import {
 } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/schedules",
+  path: "/schedules",
   version: [VERSION_2024_06_14, VERSION_2024_06_11],
 })
 @UseGuards(ApiAuthGuard, PermissionsGuard)

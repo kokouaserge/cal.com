@@ -57,7 +57,7 @@ import {
 } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/bookings",
+  path: "/bookings",
   version: VERSION_2024_08_13_VALUE,
 })
 @UseGuards(PermissionsGuard)

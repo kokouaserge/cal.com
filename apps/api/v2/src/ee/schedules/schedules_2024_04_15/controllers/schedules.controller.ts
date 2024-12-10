@@ -31,7 +31,7 @@ import { UpdateScheduleInput_2024_04_15 } from "@calcom/platform-types";
 import { CreateScheduleInput_2024_04_15 } from "../inputs/create-schedule.input";
 
 @Controller({
-  path: "/v2/schedules",
+  path: "/schedules",
   version: VERSION_2024_04_15_VALUE,
 })
 @UseGuards(ApiAuthGuard, PermissionsGuard)

@@ -83,7 +83,7 @@ const DEFAULT_PLATFORM_PARAMS = {
 };
 
 @Controller({
-  path: "/v2/bookings",
+  path: "/bookings",
   version: [VERSION_2024_04_15, VERSION_2024_06_11, VERSION_2024_06_14],
 })
 @UseGuards(PermissionsGuard)

@@ -52,7 +52,7 @@ import {
 import { ApiResponse, CalendarBusyTimesInput } from "@calcom/platform-types";
 
 @Controller({
-  path: "/v2/calendars",
+  path: "/calendars",
   version: API_VERSIONS_VALUES,
 })
 @DocsTags("Calendars")
