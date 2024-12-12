@@ -1789,6 +1789,7 @@ async function handler(
   }
 
   loggerWithEventDetails.debug(`Booking ${organizerUser.username} completed`);
+  console.log(`Booking ${organizerUser.username} completed`);
 
   // We are here so, booking doesn't require payment and booking is also created in DB already, through createBooking call
   if (isConfirmedByDefault) {
