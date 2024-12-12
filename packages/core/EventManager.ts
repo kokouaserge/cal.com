@@ -207,6 +207,8 @@ export default class EventManager {
     // Create the calendar event with the proper video call data
     results.push(...(await this.createAllCalendarEvents(clonedCalEvent)));
 
+    console.log("after push all calendar");
+
     // Since the result can be a new calendar event or video event, we have to create a type guard
     // https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates
     const isCalendarResult = (
@@ -730,6 +732,8 @@ export default class EventManager {
       await fallbackToFirstCalendarInTheList();
     }
 
+    console.log("createdEvents end");
+
     // Taking care of non-traditional calendar integrations
     createdEvents = createdEvents.concat(
       await Promise.all(
@@ -738,6 +742,8 @@ export default class EventManager {
           .map(async (cred) => await createEvent(cred, event))
       )
     );
+
+    console.log("createdEvents data", createdEvents);
 
     return createdEvents;
   }
