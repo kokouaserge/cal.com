@@ -1687,6 +1687,8 @@ async function handler(
       }
     : undefined;
 
+  console.log("enter webhook data");
+
   const webhookData: EventPayloadType = {
     ...evt,
     ...eventTypeInfo,
@@ -1705,6 +1707,8 @@ async function handler(
     smsReminderNumber: booking?.smsReminderNumber || undefined,
     rescheduledBy: reqBody.rescheduledBy,
   };
+
+  console.log("after webhook data");
 
   if (bookingRequiresPayment) {
     loggerWithEventDetails.debug(`Booking ${organizerUser.username} requires payment`);
@@ -1787,6 +1791,8 @@ async function handler(
       ...(isDryRun ? { troubleshooterData } : {}),
     };
   }
+
+  console.log("after bookingRequiresPayment", bookingRequiresPayment);
 
   loggerWithEventDetails.debug(`Booking ${organizerUser.username} completed`);
   console.log(`Booking ${organizerUser.username} completed`);
