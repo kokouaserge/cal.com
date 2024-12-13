@@ -27,4 +27,7 @@ RUN yarn workspace @calcom/api-v2 run build
 
 EXPOSE 3002
 
+# Added the following line
+ENV NODE_OPTIONS="--max_old_space_size=8192"
+
 CMD [ "yarn", "workspace", "@calcom/api-v2", "start:debug"]
