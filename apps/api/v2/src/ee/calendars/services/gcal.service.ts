@@ -79,7 +79,7 @@ export class GoogleCalendarService implements OAuthCalendarApp {
 
     const { client_id, client_secret } = this.gcalResponseSchema.parse(app.keys);
 
-    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirectUri);
+    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, `https://calcom.monrezo.net/api/v2/gcal/oauth/save`);
     return oAuth2Client;
   }
 
