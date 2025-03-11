@@ -22,8 +22,8 @@ const CALENDAR_SCOPES = [
 
 @Injectable()
 export class GoogleCalendarService implements OAuthCalendarApp {
-  //private redirectUri = `${this.config.get("api.url")}/gcal/oauth/save`;
-  private redirectUri = `https://calcom.monrezo.net/api/v2/gcal/oauth/save`;
+  private redirectUri = `${this.config.get("api.url")}/gcal/oauth/save`;
+ // private redirectUri = `https://calcom.monrezo.net/api/v2/gcal/oauth/save`;
   private gcalResponseSchema = z.object({ client_id: z.string(), client_secret: z.string() });
   private logger = new Logger("GcalService");
 
@@ -79,7 +79,7 @@ export class GoogleCalendarService implements OAuthCalendarApp {
 
     const { client_id, client_secret } = this.gcalResponseSchema.parse(app.keys);
 
-    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, `https://calcom.monrezo.net/api/v2/gcal/oauth/save`);
+    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirectUri);
     return oAuth2Client;
   }
 
