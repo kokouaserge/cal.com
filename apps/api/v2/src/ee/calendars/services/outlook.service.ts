@@ -28,7 +28,20 @@ export class OutlookService implements OAuthCalendarApp {
     private readonly credentialRepository: CredentialsRepository,
     private readonly tokensRepository: TokensRepository,
     private readonly selectedCalendarsRepository: SelectedCalendarsRepository
-  ) {}
+  ) { }
+
+  processOAuthUrl(url: string): string {
+    const urlObj = new URL(url);
+
+    // Supprimer le port 3002 du redirect_uri
+    const redirectUri = urlObj.searchParams.get('redirect_uri');
+    if (redirectUri) {
+      const updatedRedirectUri = redirectUri.replace(':3002', '');
+      urlObj.searchParams.set('redirect_uri', updatedRedirectUri);
+    }
+
+    return urlObj.toString();
+  }
 
   async connect(
     authorization: string,
@@ -39,12 +52,14 @@ export class OutlookService implements OAuthCalendarApp {
     const origin = req.get("origin") ?? req.get("host");
     const redirectUrl = await await this.getCalendarRedirectUrl(accessToken, origin ?? "", redir);
 
-    return { status: SUCCESS_STATUS, data: { authUrl: redirectUrl } };
+    return { status: SUCCESS_STATUS, data: { authUrl: this.processOAuthUrl(redirectUrl), } };
   }
 
   async save(code: string, accessToken: string, origin: string, redir?: string): Promise<{ url: string }> {
     return await this.saveCalendarCredentialsAndRedirect(code, accessToken, origin, redir);
   }
+
+
 
   async check(userId: number): Promise<{ status: typeof SUCCESS_STATUS }> {
     return await this.checkIfCalendarConnected(userId);
