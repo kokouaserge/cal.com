@@ -50,6 +50,7 @@ export const bootstrap = (app: NestExpressApplication): NestExpressApplication =
       "Authorization",
       "Content-Type",
       "Origin",
+          'x-cal-platform-embed'
     ],
     maxAge: 86_400,
   });
